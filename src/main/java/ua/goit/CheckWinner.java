@@ -31,4 +31,19 @@ public class CheckWinner {
         }
         return WINNER_IS_UNDEFINED;
     }
+
+    public static void printWinnerGreeting(byte winner) {
+        if (winner == CheckWinner.WINNER_IS_HUMAN) {
+            System.out.println("You won the game!\nCreated by Shreyas Saha. Thanks for playing!");
+        } else if (winner == CheckWinner.WINNER_IS_COMPUTER) {
+            System.out.println("You lost the game!\nCreated by Shreyas Saha. Thanks for playing!");
+        } else if (winner == CheckWinner.WINNER_IS_DRAW) {
+            System.out.println("It's a draw!\nCreated by Shreyas Saha. Thanks for playing!");
+        }
+    }
+    static boolean isWinnerExist(byte winner) {
+        return (winner == WINNER_IS_HUMAN)
+                || (winner == WINNER_IS_COMPUTER)
+                || (winner == WINNER_IS_DRAW);
+    }
 }
