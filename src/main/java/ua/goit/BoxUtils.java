@@ -47,4 +47,12 @@ public class BoxUtils {
         }
         return box;
     }
+    public static boolean ifCellAvailableForComputerMove (char[] box) {
+        for (char boxElement: box) {
+            if (boxElement != CROSS && boxElement != ZERO) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

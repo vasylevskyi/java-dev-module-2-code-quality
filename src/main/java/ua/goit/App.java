@@ -10,7 +10,9 @@ public class App {
      * @param args - method signature
      */
     public static void main(String[] args) {
-        PlayGame.runGame();
+
+        PlayGame ticTacToe = new PlayGame();
+        ticTacToe.runGame();
     }
 
 

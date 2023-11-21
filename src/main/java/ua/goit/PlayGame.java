@@ -4,12 +4,12 @@ import static ua.goit.CheckWinner.*;
 import static ua.goit.BoxUtils.*;
 
 public class PlayGame {
-    static byte i;
-    static boolean isCellAvailable = false;
-    static byte winner = 0;
-    static char[] box = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    byte i;
+    boolean isCellAvailable = false;
+    byte winner = 0;
+    char[] box = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-    public static void runGame () {
+    void runGame () {
         System.out.println("Enter box number to select. Enjoy!\n");
 
         boolean boxEmpty = false;
@@ -29,13 +29,7 @@ public class PlayGame {
 
             inputCellNumber(box);
 
-            isCellAvailable = false;
-            for (i = 0; i < 9; i++) {
-                if (box[i] != CROSS && box[i] != ZERO) {
-                    isCellAvailable = true;
-                    break;
-                }
-            }
+            isCellAvailable = ifCellAvailableForComputerMove(box);
 
             if (!isCellAvailable) {
                 winner = WINNER_IS_DRAW;
